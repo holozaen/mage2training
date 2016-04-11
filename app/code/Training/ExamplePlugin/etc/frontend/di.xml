@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="training_exampleplugin" type="Training\ExamplePlugin\Plugin\SwissProductPricePlugin" />
+    </type>
+    <type name="Magento\Framework\App\Action\Action">
+        <plugin name="training_exampleplugin" type="Training\ExamplePlugin\Plugin\ExampleActionPlugin" />
+    </type>
+</config>
