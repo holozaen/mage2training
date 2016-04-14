@@ -16,6 +16,7 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\Api\Search\FilterGroupBuilder;
 use Magento\Framework\Api\SearchCriteriaBuilder;
+use Magento\Framework\Api\SortOrderBuilder;
 use Training\CustomProductList\Api\FeaturedProductsInterface;
 
 class FeaturedFullproducts implements FeaturedProductsInterface
@@ -36,21 +37,27 @@ class FeaturedFullproducts implements FeaturedProductsInterface
      * @var ProductRepositoryInterface
      */
     private $productRepositoryInterface;
+    /**
+     * @var SortOrderBuilder
+     */
+    private $sortOrderBuilder;
 
     /**
      * FeaturedFullproducts constructor.
      * @param FilterBuilder $filterBuilder
      * @param FilterGroupBuilder $filterGroupBuilder
+     * @param SortOrderBuilder $sortOrderBuilder
      * @param SearchCriteriaBuilder $searchCriteriaBuilder
      * @param ProductRepositoryInterface $productRepositoryInterface
      */
-    public function __construct(FilterBuilder $filterBuilder,FilterGroupBuilder $filterGroupBuilder, SearchCriteriaBuilder $searchCriteriaBuilder,ProductRepositoryInterface $productRepositoryInterface)
+    public function __construct(FilterBuilder $filterBuilder,FilterGroupBuilder $filterGroupBuilder, SortOrderBuilder $sortOrderBuilder,SearchCriteriaBuilder $searchCriteriaBuilder,ProductRepositoryInterface $productRepositoryInterface)
     {
 
         $this->filterBuilder = $filterBuilder;
         $this->filterGroupBuilder = $filterGroupBuilder;
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         $this->productRepositoryInterface = $productRepositoryInterface;
+        $this->sortOrderBuilder = $sortOrderBuilder;
     }
 
 
@@ -66,8 +73,15 @@ class FeaturedFullproducts implements FeaturedProductsInterface
         $filterGroup=$this->filterGroupBuilder
             ->addFilter($filter)
             ->create();
+        $sortOrder=$this->sortOrderBuilder
+            ->setField('name')
+            ->setDescendingDirection()
+            ->create();
         $searchCriteria=$this->searchCriteriaBuilder
             ->setFilterGroups([$filterGroup])
+            ->setSortOrders([$sortOrder])
+            ->setPageSize(5)
+            ->setCurrentPage(1)
             ->create();
 
         $productlist=$this->productRepositoryInterface->getList($searchCriteria);
