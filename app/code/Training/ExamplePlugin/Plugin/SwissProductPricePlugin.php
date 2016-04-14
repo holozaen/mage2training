@@ -8,7 +8,6 @@
 
 namespace Training\ExamplePlugin\Plugin;
 
-
 use Magento\Catalog\Api\Data\ProductInterface;
 
 class SwissProductPricePlugin

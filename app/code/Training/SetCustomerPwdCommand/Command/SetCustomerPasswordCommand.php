@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 07.04.16
- * Time: 11:48
- */
 
 namespace Training\SetCustomerPwdCommand\Command;
 
@@ -16,7 +10,9 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Training\SetCustomerPwdCommand\Model\PasswordSetter;
-//use Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy as PasswordSetter; //alternative: wird erst generiert durch 1. Aufruf
+
+//alternative - generation only after first call
+//use Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy as PasswordSetter;
 
 class SetCustomerPasswordCommand extends command
 {

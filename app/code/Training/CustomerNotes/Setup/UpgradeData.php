@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 09.04.16
- * Time: 12:05
- */
 
 namespace Training\CustomerNotes\Setup;
 

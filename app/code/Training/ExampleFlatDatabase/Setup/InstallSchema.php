@@ -27,12 +27,12 @@ class InstallSchema implements InstallSchemaInterface
 
         $tableName=$setup->getTable('training_exampleflatdatabase_flattable');
 
-        /** Drop existing Table (we are in installSchema, so should start clean) */
+        /** drop existing Table (we are in installSchema, so should start clean) */
         if ($setup->getConnection()->isTableExists($tableName)){
             $setup->getConnection()->dropTable($tableName);
         }
 
-        /** Prepair the Table */
+        /** prepairing the Table */
         $table=$setup->getConnection()->newTable($tableName);
         $table->addColumn(
             'entity_id',

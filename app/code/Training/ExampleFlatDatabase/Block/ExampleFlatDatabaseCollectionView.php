@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 14.04.16
- * Time: 10:57
- */
 
 namespace Training\ExampleFlatDatabase\Block;
 
@@ -15,10 +9,6 @@ use Training\ExampleFlatDatabase\Api\FlatTableItemInterface;
 
 class ExampleFlatDatabaseCollectionView extends Template
 {
-    /**
-     * @var Collection
-     */
-    private $collection;
     /**
      * @var FlatTableItemInterface
      */

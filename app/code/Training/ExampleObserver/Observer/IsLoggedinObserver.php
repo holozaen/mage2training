@@ -17,6 +17,7 @@ class IsLoggedinObserver implements ObserverInterface
 
     /**
      * IsLoggedinObserver constructor.
+     * @param MessageManager $messageManager
      */
     public function __construct(MessageManager $messageManager)
     {
@@ -25,7 +26,7 @@ class IsLoggedinObserver implements ObserverInterface
 
     public function execute(Observer $observer)
     {
-        //Manuell hinzugefügt, da PhpStorm keine Ahnung hatte, was $observer->getData('customer') zurückgibt
+        //Add PhpDoc-definitions for variables for getting auto-completion
         /** @var \Magento\Customer\Model\Customer $customer */
         $customer = $observer->getData('customer');
         $customerName = $customer->getName();

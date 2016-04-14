@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 11.04.16
- * Time: 15:36
- */
 
 namespace Training\CustomProductList\Setup;
 
-
-use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Model\Product;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
 use Magento\Eav\Model\Entity\Attribute\Source\Boolean;

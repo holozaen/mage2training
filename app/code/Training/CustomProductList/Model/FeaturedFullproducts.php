@@ -1,12 +1,12 @@
 <?php
 /**
- * Beispiel, wie eine bestimmte Produktcollection über die Rest API bereitgestellt werden kann
+ * This is an example on how to expose a product collection over the rest api
  *
- * Siehe auch die Dateien
- * - di.xml (Zuweisung der Implementation zum Interface),
- * - webapi.xml (Url, über die der Webservice bereitgestellt wird, allfällige Zugangsbeschränkungen)
+ * see files:
+ * - di.xml (assigns implementation to interface)
+ * - webapi.xml (sets url for api and - if applicable - user permissions neede
  *
- * Im Interface wird schliesslich definiert (im Doc), welcher Typ über die Api übergeben wird
+ * The interface defines in the PHPDoc comment, which parameter type is to be returned on api calls
  */
 
 namespace Training\CustomProductList\Model;
@@ -39,6 +39,10 @@ class FeaturedFullproducts implements FeaturedProductsInterface
 
     /**
      * FeaturedFullproducts constructor.
+     * @param FilterBuilder $filterBuilder
+     * @param FilterGroupBuilder $filterGroupBuilder
+     * @param SearchCriteriaBuilder $searchCriteriaBuilder
+     * @param ProductRepositoryInterface $productRepositoryInterface
      */
     public function __construct(FilterBuilder $filterBuilder,FilterGroupBuilder $filterGroupBuilder, SearchCriteriaBuilder $searchCriteriaBuilder,ProductRepositoryInterface $productRepositoryInterface)
     {

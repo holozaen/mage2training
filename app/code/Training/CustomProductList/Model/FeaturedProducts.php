@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 12.04.16
- * Time: 19:26
- */
 
 namespace Training\CustomProductList\Model;
 
@@ -51,7 +45,6 @@ class FeaturedProducts
     /**
      * Return collection of products with featured attribute set to 1
      *
-     * @api
      * @return array
      */
     public function getFeaturedProductsArray()

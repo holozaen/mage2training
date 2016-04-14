@@ -22,6 +22,8 @@ class ExampleActionPlugin
 
     /**
      * ExampleActionPlugin constructor.
+     * @param LoggerInterface $logger
+     * @param RemoteAddress $remoteAddress
      */
     public function __construct(LoggerInterface $logger, RemoteAddress $remoteAddress)
     {

@@ -2,7 +2,6 @@
 
 namespace Training\ExampleFlatDatabase\Controller\Index;
 
-
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;

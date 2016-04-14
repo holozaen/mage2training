@@ -8,10 +8,13 @@
             </argument>
         </arguments>
     </type>
-    <!-- preference for="Training\SetCustomerPwdCommand\Model\PasswordSetter" type="Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy"/ --> <!-- Variante, um code erst zu instantiieren sobald benötigt -->
+    <!-- The following variant could be used to instantiate the class only if it is needed the first time -->
+    <!-- preference for="Training\SetCustomerPwdCommand\Model\PasswordSetter" type="Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy"/ -->
+
+    <!-- The following variant could be used to instantiate the class only if it is needed the first time -->
     <!-- type name="Training\SetCustomerPwdCommand\Command\SetCustomerPasswordCommand">
-        <arguments>
-            <argument name="passwordSetter" xsi:type="object">Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy</argument>
-        </arguments>
-    </type --> <!-- Variante, um code erst zu instantiieren sobald benötigt, wobei diese preferece nur für diese Klasse SetCustomerPasswordCommand gilt-->
+         <arguments>
+             <argument name="passwordSetter" xsi:type="object">Training\SetCustomerPwdCommand\Model\PasswordSetter\Proxy</argument>
+         </arguments>
+         -->
  </config>

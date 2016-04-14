@@ -1,21 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 08.04.16
- * Time: 10:33
- */
 
 namespace Training\CartInfo\Controller\Index;
 
-
-use Magento\Checkout\Model\Cart; //Interface hat nicht funktioniert (immer leer)
+use Magento\Checkout\Model\Cart; //interface did not work for some reason (empty)
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Result\PageFactory;
-use Magento\Quote\Api\Data\CartItemInterface;
 use Training\CartInfo\Helper\QuoteInfo;
 
 class Index extends Action
@@ -37,6 +29,14 @@ class Index extends Action
      */
     private $registry;
 
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param QuoteInfo $quoteInfo
+     * @param JsonFactory $jsonFactory
+     * @param PageFactory $pageFactory
+     * @param Registry $registry
+     */
     public function __construct(Context $context, QuoteInfo $quoteInfo, JsonFactory $jsonFactory, PageFactory $pageFactory, Registry $registry)
     {
         parent::__construct($context);

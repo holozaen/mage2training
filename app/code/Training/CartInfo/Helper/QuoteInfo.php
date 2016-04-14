@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ovc
- * Date: 08.04.16
- * Time: 14:34
- */
 
 namespace Training\CartInfo\Helper;
 use Magento\Checkout\Model\Cart;
-use Magento\Quote\Api\Data\CartItemInterface; //Interface hat nicht funktioniert (immer leer)
+use Magento\Quote\Api\Data\CartItemInterface; //Interface did not function (empty)
 
 
 class QuoteInfo
@@ -20,6 +14,7 @@ class QuoteInfo
 
     /**
      * QuoteInfo constructor.
+     * @param Cart $cart
      */
     public function __construct(Cart $cart)
     {
@@ -49,7 +44,8 @@ class QuoteInfo
 
     private function getvisibleItems($itemCollection)
     {
-        return array_filter(/**
+        return array_filter(
+        /**
          * @param CartItemInterface $item
          * @return bool
          */
