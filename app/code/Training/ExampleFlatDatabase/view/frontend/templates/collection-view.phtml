@@ -1,0 +1,7 @@
+<?php /** @var \Training\ExampleFlatDatabase\Block\ExampleFlatDatabaseCollectionView $block */?>
+<?php
+
+$collection=$block->getFlatTableItemCollection();
+foreach ($collection as $item) {
+    var_dump($item->getData());
+}
