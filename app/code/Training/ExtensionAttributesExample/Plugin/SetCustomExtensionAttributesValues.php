@@ -9,7 +9,14 @@
 namespace Training\ExtensionAttributesExample\Plugin;
 
 
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\RequestInterface;
+
 class SetCustomExtensionAttributesValues
 {
-
+    public function aroundSetExtensionAttributes(Action $subject, callable $proceed, RequestInterface $request)
+    {
+        $result = $proceed($request);
+        return $result;
+    }
 }
