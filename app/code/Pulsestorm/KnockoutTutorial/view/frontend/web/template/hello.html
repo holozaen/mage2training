@@ -1,0 +1,5 @@
+<p data-bind="style:{fontSize:'24px'}">Hello World</p>
+<ul><li class="greet welcome" data-bind="scope: 'customer'">
+    <pre data-bind="text: ko.toJSON($data, null, 2)"></pre> <!-- shows better info on scope content -->
+    <span data-bind="text: customer().fullname ? $t('Welcome, %1!').replace('%1', customer().fullname) : 'Default welcome msg!'"></span>
+</li></ul>
