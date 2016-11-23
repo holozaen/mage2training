@@ -13,6 +13,14 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
+
+    /**
+     * @var string
+     * mandatory to enable mass action in grid
+     */
+
+    protected $_idFieldName = 'tag_id';
+
     /**
      * Collection constructor.
      */
