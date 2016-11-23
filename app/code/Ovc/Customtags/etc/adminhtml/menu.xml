@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ovc_Customtags::tag" title="Custom Tags"
+                module="Ovc_Customtags" sortOrder="20"
+                resource="Ovc_Customtags::tag" />
+        <add id="Ovc_Customtags::manage_tags" title="Manage Tags"
+                module="Ovc_Customtags" sortOrder="2" parent="Ovc_Customtags::tag"
+                action="customtags/tag/index" resource="Ovc_Customtags::manage_tags" />
+    </menu>
+</config>

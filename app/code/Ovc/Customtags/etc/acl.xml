@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Ovc_Customtags::tag" title="Ovc Customtags" sortOrder="100">
+                    <resource id="Ovc_Customtags::manage_tags" title="Manage Tags" sortOrder="1"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <!-- this resource id we can use in system.xml for section -->
+                            <resource id="Ovc_Customtags::system_config" title="Ovc Customtags config" sortOrder="80" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
