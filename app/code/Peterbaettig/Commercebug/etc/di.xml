@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <type name="Magento\Framework\Event\ManagerInterface">
+        <plugin name="pulsestorm_commercebug_plugins_events" type="Peterbaettig\Commercebug\Plugins\Events" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\Event\InvokerInterface">
+        <plugin name="pulsestorm_commercebug_plugins_observers" type="Peterbaettig\Commercebug\Plugins\Observers" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\View\Model\Layout\Merge">
+        <plugin name="pulsestorm_commercebug_plugins_merge" type="Peterbaettig\Commercebug\Plugins\Merge" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\View\Layout">
+        <plugin name="pulsestorm_commercebug_magento_framework_view_layout_1" type="Peterbaettig\Commercebug\Plugins\MagentoFrameworkViewLayout" sortOrder="10" disabled="false"/>
+        <plugin name="pulsestorm_commercebug_magento_framework_view_layout_2" type="Peterbaettig\Commercebug\Plugin\Magento\Framework\View\Layout"/>
+    </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="pulsestorm_commercebug_command_contextscan" xsi:type="object">Peterbaettig\Commercebug\Command\Contextscan</item>
+                <item name="pulsestorm_commercebug_command_testbed" xsi:type="object">Peterbaettig\Commercebug\Command\Testbed</item>
+                <item name="pulsestorm_commercebug_command_scandoubleparam" xsi:type="object">Peterbaettig\Commercebug\Command\Scandoubleparam</item>
+            </argument>
+        </arguments>
+    </type>        
+    <type name="Magento\Framework\Filesystem\Driver\File">
+        <plugin name="pulsestorm_commercebug_magento_framework_filesystem_driver_file" type="Peterbaettig\Commercebug\Plugins\MagentoFrameworkFilesystemDriverFile"/>
+    </type>
+    <type name="Magento\Framework\View\Asset\GroupedCollection">
+        <plugin name="pulsestorm_commercebug_magento_framework_view_asset_groupedcollection" type="Peterbaettig\Commercebug\Plugin\Magento\Framework\View\Asset\GroupedCollection"/>
+    </type>
+    <type name="Magento\Framework\View\Layout\Data\Structure">
+        <plugin name="pulsestorm_commercebug_magento_framework_view_layout_data_structure" type="Peterbaettig\Commercebug\Plugin\Magento\Framework\View\Layout\Data\Structure"/>
+    </type>
+</config>
