@@ -2,15 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: ovc
- * Date: 22.11.16
- * Time: 12:58
+ * Date: 24.11.16
+ * Time: 13:24
  */
 
-namespace Ovc\Customtags\Controller\Adminhtml\Tag;
+namespace Ovc\Customtags\Controller\Adminhtml\Index;
 
-use Ovc\Customtags\Controller\Adminhtml\Tag;
 
-class Index extends Tag
+use Magento\Framework\App\ResponseInterface;
+
+class Index extends \Ovc\Customtags\Controller\Adminhtml\Index
 {
 
     /**
@@ -21,7 +22,6 @@ class Index extends Tag
      */
     public function execute()
     {
-        $request=$this->getRequest();
         if ($this->getRequest()->getQuery('ajax')) {
             $this->_forward('grid');
             return null;
@@ -29,8 +29,6 @@ class Index extends Tag
 
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('Ovc_Customtags::tag');
-        $resultPage->getConfig()->getTitle()->prepend(__('Custom Tags'));
 
         return $resultPage;
     }

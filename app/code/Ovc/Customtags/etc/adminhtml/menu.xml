@@ -6,6 +6,6 @@
                 resource="Ovc_Customtags::tag" />
         <add id="Ovc_Customtags::manage_tags" title="Manage Tags"
                 module="Ovc_Customtags" sortOrder="2" parent="Ovc_Customtags::tag"
-                action="customtags/tag/index" resource="Ovc_Customtags::manage_tags" />
+                action="customtags/index/index" resource="Ovc_Customtags::manage_tags" />
     </menu>
 </config>
