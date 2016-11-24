@@ -6,10 +6,18 @@
             <item name="deps" xsi:type="string">ovc_tag_grid.ovc_tag_grid_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">ovc_tag_grid_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New Item</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/new</item>
+            </item>
+        </item>
     </argument>
     <dataSource name="ovc_tag_grid_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Ovc\Customtags\Ui\Component\Listing\DataProviders\Ovc\Tag\Grid</argument>
+            <argument name="class" xsi:type="string">Ovc\Customtags\Ui\Component\DataProvider\Grid</argument>
             <argument name="name" xsi:type="string">ovc_tag_grid_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">tag_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
@@ -171,7 +179,7 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="actions" class="Ovc\Customtags\Ui\Component\Listing\Column\Ovctaggrid\PageActions">
+        <actionsColumn name="actions" class="Ovc\Customtags\Ui\Component\Listing\Column\Customtags\GridActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
