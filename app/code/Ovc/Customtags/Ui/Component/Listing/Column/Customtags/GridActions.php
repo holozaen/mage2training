@@ -1,8 +1,9 @@
 <?php
-namespace Ovc\Customtags\Ui\Component\Listing\Column\Ovctaggrid;
+namespace Ovc\Customtags\Ui\Component\Listing\Column\Customtags;
 
-class PageActions extends \Magento\Ui\Component\Listing\Columns\Column
+class GridActions extends \Magento\Ui\Component\Listing\Columns\Column
 {
+
     public function prepareDataSource(array $dataSource)
     {
         if (isset($dataSource["data"]["items"])) {
@@ -15,7 +16,7 @@ class PageActions extends \Magento\Ui\Component\Listing\Columns\Column
                 }
                 $item[$name]["view"] = [
                     "href"=>$this->getContext()->getUrl(
-                        "adminhtml/ovc_tag_grid/viewlog",["id"=>$id]),
+                        "customtags/index/edit",["id"=>$id]),
                     "label"=>__("Edit")
                 ];
             }

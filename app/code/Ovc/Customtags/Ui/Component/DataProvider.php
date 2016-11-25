@@ -1,8 +1,15 @@
 <?php
-namespace Ovc\Customtags\Ui\Component\Listing\DataProviders\Ovc\Tag;
+namespace Ovc\Customtags\Ui\Component;
 
-class Grid extends \Magento\Ui\DataProvider\AbstractDataProvider
-{    
+use Magento\Ui\DataProvider\AbstractDataProvider;
+
+class DataProvider extends AbstractDataProvider
+{
+    /**
+     * @var array
+     */
+    protected $_loadedData;
+
     public function __construct(
         $name,
         $primaryFieldName,
@@ -14,4 +21,6 @@ class Grid extends \Magento\Ui\DataProvider\AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->collection = $collectionFactory->create();
     }
+
+
 }
