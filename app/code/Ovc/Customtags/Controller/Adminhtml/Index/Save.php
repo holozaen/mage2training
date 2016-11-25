@@ -35,17 +35,15 @@ class Save extends Index
                 $data['tag_id'] = null;
             }
 
-            /** @var \Magento\Cms\Model\Block $model */
+            /** @var \Ovc\Customtags\Model\ResourceModel\Tag $model */
             $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag')->load($id);
             if (!$model->getId() && $id) {
                 $this->messageManager->addError(__('This tag no longer exists.'));
                 return $resultRedirect->setPath('*/*/');
             }
 
-            $model->setData($data);
-
             try {
-                $model->save();
+                $model->delete();
                 $this->messageManager->addSuccess(__('You saved the tag.'));
                 $this->_dataPersistor->clear('tag_details');
 
