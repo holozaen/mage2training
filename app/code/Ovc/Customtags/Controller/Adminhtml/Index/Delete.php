@@ -19,6 +19,7 @@ class Delete extends Index
         if ($id) {
             try{
                 // init model and delete
+                /** @var \Ovc\Customtags\Model\Tag $model */
                 $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag');
                 $model->load($id);
                 $model->delete();
@@ -31,7 +32,7 @@ class Delete extends Index
                 // display error message
                 $this->messageManager->addErrorMessage($e->getMessage());
                 // go back to edit form
-                return $resultRedirect->setPath('*/*/edit', ['block_id' => $id]);
+                return $resultRedirect->setPath('*/*/edit', ['tag_id' => $id]);
 
             }
         }

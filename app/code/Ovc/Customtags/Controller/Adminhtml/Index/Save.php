@@ -1,18 +1,17 @@
 <?php
 /**
- *
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * Created by PhpStorm.
+ * User: ovc
+ * Date: 25.11.16
+ * Time: 14:55
  */
-namespace Ovc\Customtags\Controller\Adminhtml;
 
-use Magento\Framework\App\Request\DataPersistorInterface;
+namespace Ovc\Customtags\Controller\Adminhtml\Index;
+
 use Magento\Framework\Exception\LocalizedException;
-use Magento\TestFramework\Inspection\Exception;
 
 class Save extends Index
 {
-
 
     /**
      * Save action
@@ -28,9 +27,6 @@ class Save extends Index
         if ($data) {
             $id = $this->getRequest()->getParam('tag_id');
 
-            if (isset($data['is_active']) && $data['is_active'] === 'true') {
-                $data['is_active'] = Block::STATUS_ENABLED;
-            }
             if (empty($data['tag_id'])) {
                 $data['tag_id'] = null;
             }
@@ -38,13 +34,15 @@ class Save extends Index
             /** @var \Ovc\Customtags\Model\ResourceModel\Tag $model */
             $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag')->load($id);
             if (!$model->getId() && $id) {
-                $this->messageManager->addError(__('This tag no longer exists.'));
+                $this->messageManager->addErrorMessage(__('This tag no longer exists.'));
                 return $resultRedirect->setPath('*/*/');
             }
 
+            $model->setData($data);
+
             try {
-                $model->delete();
-                $this->messageManager->addSuccess(__('You saved the tag.'));
+                $model->save();
+                $this->messageManager->addSuccessMessage(__('You saved the tag.'));
                 $this->_dataPersistor->clear('tag_details');
 
                 if ($this->getRequest()->getParam('back')) {
@@ -52,9 +50,9 @@ class Save extends Index
                 }
                 return $resultRedirect->setPath('*/*/');
             } catch (LocalizedException $e) {
-                $this->messageManager->addError($e->getMessage());
+                $this->messageManager->addErrorMessage($e->getMessage());
             } catch (\Exception $e) {
-                $this->messageManager->addException($e, __('Something went wrong while saving the tag.'));
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the tag.'));
             }
 
             $this->_dataPersistor->set('tag_details', $data);

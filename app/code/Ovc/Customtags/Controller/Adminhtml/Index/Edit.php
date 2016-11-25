@@ -22,7 +22,7 @@ class Edit extends Index
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
+        $id = $this->getRequest()->getParam('tag_id');
         $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag');
         // 2. Initial checking
         if ($id) {
