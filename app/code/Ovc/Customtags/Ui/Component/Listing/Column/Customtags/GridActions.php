@@ -16,7 +16,7 @@ class GridActions extends \Magento\Ui\Component\Listing\Columns\Column
                 }
                 $item[$name]["view"] = [
                     "href"=>$this->getContext()->getUrl(
-                        "customtags/index/edit",["id"=>$id]),
+                        "customtags/index/edit",["tag_id"=>$id]),
                     "label"=>__("Edit")
                 ];
             }

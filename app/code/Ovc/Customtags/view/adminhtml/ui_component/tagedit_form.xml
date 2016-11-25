@@ -11,23 +11,23 @@
             <item name="namespace" xsi:type="string">tagedit_form</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
-        <!-- item name="buttons" xsi:type="array">
-            <item name="back" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\BackButton</item>
-            <item name="delete" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\DeleteButton</item>
-            <item name="reset" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\ResetButton</item>
-            <item name="save" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\SaveButton</item>
-            <item name="save_and_continue" xsi:type="string">Magento\Cms\Block\Adminhtml\Block\Edit\SaveAndContinueButton</item>
-        </item -->
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\DeleteButton</item>
+            <item name="reset" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\ResetButton</item>
+            <item name="save" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\SaveAndContinueButton</item>
+        </item>
     </argument>
     <dataSource name="tagedit_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Ovc\Customtags\Ui\Component\DataProvider\Edit</argument>
             <argument name="name" xsi:type="string">tagedit_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">tag_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">tag_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="customtag/index/save"/>
+                    <item name="submit_url" xsi:type="url" path="customtags/index/save"/>
                 </item>
             </argument>
         </argument>
@@ -67,6 +67,37 @@
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">tageditform</item>
                     <item name="dataScope" xsi:type="string">name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Ovc\Customtags\Model\System\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Status</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">tageditform</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="base_popularity">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Base Popularity</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">tageditform</item>
+                    <item name="dataScope" xsi:type="string">base_popularity</item>
                 </item>
             </argument>
         </field>

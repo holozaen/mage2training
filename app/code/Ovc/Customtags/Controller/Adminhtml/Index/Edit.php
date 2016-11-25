@@ -22,13 +22,13 @@ class Edit extends Index
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
+        $id = $this->getRequest()->getParam('tag_id');
         $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag');
         // 2. Initial checking
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addError(__('This tag no longer exists.'));
+                $this->messageManager->addErrorMessage(__('This tag no longer exists.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
                 return $resultRedirect->setPath('*/*/');

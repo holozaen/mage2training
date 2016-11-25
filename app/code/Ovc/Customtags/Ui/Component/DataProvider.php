@@ -2,6 +2,7 @@
 namespace Ovc\Customtags\Ui\Component;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
+use Ovc\Customtags\Model\ResourceModel\Tag\CollectionFactory;
 
 class DataProvider extends AbstractDataProvider
 {
@@ -14,7 +15,7 @@ class DataProvider extends AbstractDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        \Ovc\Customtags\Model\ResourceModel\Tag\CollectionFactory $collectionFactory,
+        CollectionFactory $collectionFactory,
         array $meta = [],
         array $data = []
     ) {

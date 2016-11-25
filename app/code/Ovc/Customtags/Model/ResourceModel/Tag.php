@@ -8,7 +8,6 @@
 
 namespace Ovc\Customtags\Model\ResourceModel;
 
-
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class Tag extends AbstractDb
@@ -23,4 +22,6 @@ class Tag extends AbstractDb
     {
         $this->_init('ovc_tag','tag_id');
     }
+
+
 }

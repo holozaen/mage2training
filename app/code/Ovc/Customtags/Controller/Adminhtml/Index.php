@@ -72,13 +72,13 @@ abstract class Index extends Action
         Filter $_filter,
         DataPersistorInterface $_dataPersistor
     ) {
-        parent::__construct($_context);
         $this->_coreRegistry = $_coreRegistry;
         $this->_resultPageFactory = $_resultPageFactory;
         $this->_context = $_context;
         $this->_filter = $_filter;
         $this->_collectionFactory = $_collectionFactory;
         $this->_dataPersistor = $_dataPersistor;
+        parent::__construct($_context);
     }
 
     /**
