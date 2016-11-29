@@ -55,6 +55,7 @@ class Second extends AbstractModifier
      */
     public function modifyData(array $data)
     {
+        //dataarray anreichern mit Daten aus der entsprechenden Tabelle, die dem Modifier zugrunde liegt
         return $data;
     }
 }
