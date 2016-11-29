@@ -20,6 +20,10 @@ class EditDataProvider extends AbstractDataProvider
      * @var array
      */
     protected $_loadedData;
+    /**
+     * @var PoolInterface
+     */
+    private $pool;
 
 
     public function __construct(
@@ -27,11 +31,13 @@ class EditDataProvider extends AbstractDataProvider
         $primaryFieldName,
         $requestFieldName,
         CollectionFactory $collectionFactory,
+        PoolInterface $pool,
         array $meta = [],
         array $data = []
     ) {
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->collection = $collectionFactory->create();
+        $this->pool = $pool;
     }
 
     /**
@@ -41,6 +47,7 @@ class EditDataProvider extends AbstractDataProvider
      */
     public function getData()
     {
+  /*
         if (isset($this->_loadedData)) {
             return $this->_loadedData;
         }
@@ -49,6 +56,28 @@ class EditDataProvider extends AbstractDataProvider
             $this->_loadedData[$item->getId()] = $item->getData();
         }
         return $this->_loadedData;
+  */
+        /** @var ModifierInterface $modifier */
+        foreach ($this->pool->getModifiersInstances() as $modifier) {
+            $this->data = $modifier->modifyData($this->data);
+        }
+
+        return $this->data;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMeta()
+    {
+        $meta = parent::getMeta();
+
+        /** @var ModifierInterface $modifier */
+        foreach ($this->pool->getModifiersInstances() as $modifier) {
+            $meta = $modifier->modifyMeta($meta);
+        }
+
+        return $meta;
     }
 
 }

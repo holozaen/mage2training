@@ -18,6 +18,7 @@
             <item name="save" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\SaveButton</item>
             <item name="save_and_continue" xsi:type="string">Ovc\Customtags\Block\Adminhtml\Edit\SaveAndContinueButton</item>
         </item>
+        <item name="childrenFromMeta" xsi:type="boolean">true</item>
     </argument>
     <dataSource name="tagedit_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
