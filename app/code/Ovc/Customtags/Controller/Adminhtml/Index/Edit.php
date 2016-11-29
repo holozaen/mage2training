@@ -35,7 +35,7 @@ class Edit extends Index
             }
         }
 
-        $this->_coreRegistry->register('tag_details', $model);
+        $this->_coreRegistry->register('current_tag', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
