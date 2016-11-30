@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ovc
- * Date: 28.11.16
- * Time: 17:40
+ * Example for abstract Modifier (analog product edit form) - needed for applying single modifiers to form
  */
 
 namespace Ovc\Customtags\Ui\DataProvider\Modifier;

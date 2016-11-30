@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ovc
- * Date: 28.11.16
- * Time: 16:36
+ * Example for Modifier (analog product edit form) - changes form
  */
 
 namespace Ovc\Customtags\Ui\DataProvider\Modifier;
