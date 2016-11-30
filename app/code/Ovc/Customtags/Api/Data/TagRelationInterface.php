@@ -6,7 +6,7 @@
  * Time: 13:30
  */
 
-namespace Ovc\Customtags\Api;
+namespace Ovc\Customtags\Api\Data;
 
 
 interface TagRelationInterface

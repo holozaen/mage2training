@@ -11,7 +11,7 @@ namespace Ovc\Customtags\Model;
 
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
-use Ovc\Customtags\Api\TagRelationInterface;
+use Ovc\Customtags\Api\Data\TagRelationInterface;
 
 class Relation extends AbstractModel implements  TagRelationInterface  , IdentityInterface
 {
@@ -31,6 +31,6 @@ class Relation extends AbstractModel implements  TagRelationInterface  , Identit
      */
     public function getIdentities()
     {
-        // TODO: Implement getIdentities() method.
+        return [self::CACHE_TAG . '_' . $this->getId()];
     }
 }
