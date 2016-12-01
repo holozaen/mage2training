@@ -115,8 +115,8 @@ class Productlist extends AbstractModifier
             }
         }
 
-        $data[$tagId][self::DATA_SOURCE_DEFAULT]['current_tag_id'] = $tagId;
-        $data[$tagId][self::DATA_SOURCE_DEFAULT]['current_store_id'] = $this->locator->getStore()->getId();
+        $data[$tagId]['current_tag_id'] = $tagId;
+        $data[$tagId]['current_store_id'] = $this->locator->getStore()->getId();
         return $data;
     }
 
