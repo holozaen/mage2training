@@ -11,8 +11,8 @@ use Magento\Ui\DataProvider\Modifier\ModifierInterface;
 abstract class AbstractModifier implements ModifierInterface
 {
     const FORM_NAME = 'tagedit_form';
-    const DATA_SOURCE_DEFAULT = 'product';
-    const DATA_SCOPE_PRODUCT = 'data.product';
+    const DATA_SOURCE_DEFAULT = 'tag';
+    const DATA_SCOPE_TAG = 'data.tag';
 
     /**
      * Name of default general panel

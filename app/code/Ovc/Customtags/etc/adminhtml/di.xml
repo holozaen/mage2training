@@ -8,9 +8,18 @@
                     <item name="class" xsi:type="string">Ovc\Customtags\Ui\DataProvider\Modifier\Second</item>
                     <item name="sortOrder" xsi:type="number">20</item>
                 </item>
+                <item name="productList" xsi:type="array">
+                    <item name="class" xsi:type="string">Ovc\Customtags\Ui\DataProvider\Modifier\Productlist</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
             </argument>
         </arguments>
     </virtualType>
+    <type name="Ovc\Customtags\Ui\DataProvider\Modifier\Productlist">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">tagedit_form.tagedit_form</argument>
+        </arguments>
+    </type>
     <type name="Ovc\Customtags\Ui\DataProvider\EditDataProvider">
         <arguments>
             <argument name="pool" xsi:type="object">Ovc\Customtags\Ui\DataProvider\Modifier\Pool</argument>
