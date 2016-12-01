@@ -5,4 +5,5 @@
     <preference for="Ovc\Customtags\Api\TagRepositoryInterface" type="Ovc\Customtags\Model\TagRepository" />
     <preference for="Ovc\Customtags\Api\Data\Taginterface" type="Ovc\Customtags\Model\Tag" />
     <preference for="Ovc\Customtags\Api\Data\TagRelationinterface" type="Ovc\Customtags\Model\Relation" />
+    <preference for="Ovc\Customtags\Api\TagRelationRepositoryInterface" type="Ovc\Customtags\Model\TagRelationRepository" />
 </config>
