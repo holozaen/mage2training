@@ -2,7 +2,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Ovc_Customtags::manage_tags" title="Tags"
-                module="Ovc_Customtags" sortOrder="25" parent="Magento_Backend::content_elements"
+                module="Ovc_Customtags" sortOrder="60" parent="Magento_Backend::content_elements"
                 action="customtags/index/index" resource="Ovc_Customtags::manage_tags" />
     </menu>
 </config>
