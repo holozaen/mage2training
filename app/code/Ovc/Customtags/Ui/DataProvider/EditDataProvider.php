@@ -48,18 +48,16 @@ class EditDataProvider extends AbstractDataProvider
     public function getData()
     {
 
-        if (!isset($this->_loadedData)) {
             $items = $this->collection->getItems();
             foreach ($items as $item) {
-                $this->_loadedData[$item->getId()] = $item->getData();
+                $this->data[$item->getId()] = $item->getData();
                 foreach ($this->pool->getModifiersInstances() as $modifier) {
-                    $this->_loadedData[$item->getId()] = $modifier->modifyData($this->_loadedData[$item->getId()]);
+                    $this->data = $modifier->modifyData($this->data);
                 }
             }
-        }
 
 
-        return $this->_loadedData;
+        return $this->data;
     }
 
     /**
