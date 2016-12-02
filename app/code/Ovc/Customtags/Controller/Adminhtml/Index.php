@@ -14,6 +14,7 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Store\Model\StoreFactory;
 use Magento\Ui\Component\MassAction\Filter;
 use Ovc\Customtags\Model\ResourceModel\Tag\CollectionFactory as CollectionFactory;
 
@@ -50,6 +51,10 @@ abstract class Index extends Action
      * @var DataPersistorInterface
      */
     protected $_dataPersistor;
+    /**
+     * @var StoreFactory
+     */
+    protected $storeFactory;
 
     /**
      * @param Context $_context
@@ -58,6 +63,7 @@ abstract class Index extends Action
      * @param CollectionFactory $_collectionFactory
      * @param Filter $_filter
      * @param DataPersistorInterface $_dataPersistor
+     * @param StoreFactory $storeFactory
      * @internal param Context $context
      * @internal param Registry $coreRegistry
      * @internal param PageFactory $resultPageFactory
@@ -70,7 +76,8 @@ abstract class Index extends Action
         PageFactory $_resultPageFactory,
         CollectionFactory $_collectionFactory,
         Filter $_filter,
-        DataPersistorInterface $_dataPersistor
+        DataPersistorInterface $_dataPersistor,
+        StoreFactory $storeFactory
     ) {
         $this->_coreRegistry = $_coreRegistry;
         $this->_resultPageFactory = $_resultPageFactory;
@@ -78,6 +85,7 @@ abstract class Index extends Action
         $this->_filter = $_filter;
         $this->_collectionFactory = $_collectionFactory;
         $this->_dataPersistor = $_dataPersistor;
+        $this->storeFactory = $storeFactory;
         parent::__construct($_context);
     }
 

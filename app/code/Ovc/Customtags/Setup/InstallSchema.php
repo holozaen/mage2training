@@ -434,28 +434,6 @@ class InstallSchema implements InstallSchemaInterface
             'Products'
         );
         $table->addColumn(
-            'uses',
-            Table::TYPE_INTEGER,
-            10,
-            [
-                'nullable' => false,
-                'unsigned' => true,
-                'default'  => 0
-            ],
-            'Uses'
-        );
-        $table->addColumn(
-            'historical_uses',
-            Table::TYPE_INTEGER,
-            10,
-            [
-                'nullable' => false,
-                'unsigned' => true,
-                'default'  => 0
-            ],
-            'Historical Uses'
-        );
-        $table->addColumn(
             'popularity',
             Table::TYPE_INTEGER,
             10,
@@ -466,18 +444,6 @@ class InstallSchema implements InstallSchemaInterface
             ],
             'Popularity'
         );
-        $table->addColumn(
-            'base_popularity',
-            Table::TYPE_INTEGER,
-            10,
-            [
-                'nullable' => false,
-                'unsigned' => true,
-                'default'  => 0
-            ],
-            'Base Popularity'
-        );
-
 
         $table->addIndex('SOMENAME',['tag_id','store_id'],['type'=>AdapterInterface::INDEX_TYPE_PRIMARY]);
         $table->addIndex('IDX_TAG_SUMMARY_STORE_ID','tag_id');

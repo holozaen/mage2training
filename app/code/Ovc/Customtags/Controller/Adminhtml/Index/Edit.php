@@ -14,6 +14,15 @@ use Ovc\Customtags\Controller\Adminhtml\Index;
 class Edit extends Index
 {
 
+    private function _setCurrentStoreId()
+    {
+        $request = $this->getRequest();
+        $store = $this->storeFactory->create();
+        $store->load($request->getParam('store', 0));
+        $this->_coreRegistry->register('current_store', $store);
+        return $store->getId();
+    }
+
     /**
      * Dispatch request
      *
@@ -22,6 +31,7 @@ class Edit extends Index
      */
     public function execute()
     {
+        $storeId=$this->_setCurrentStoreId();
         $id = $this->getRequest()->getParam('tag_id');
         $model = $this->_objectManager->create('Ovc\Customtags\Model\Tag');
         // 2. Initial checking
@@ -35,7 +45,7 @@ class Edit extends Index
             }
         }
 
-        $this->_coreRegistry->register('tag_details', $model);
+        $this->_coreRegistry->register('current_tag', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
