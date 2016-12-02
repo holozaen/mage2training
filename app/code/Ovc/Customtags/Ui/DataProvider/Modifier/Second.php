@@ -18,7 +18,7 @@ class Second extends AbstractModifier
                         'componentType' => 'fieldset',
                         'label' => __('Label For Fieldset'),
                         'sortOrder' => 50,
-                        'collapsible' => true
+                        'collapsible' => false
                     ]
                 ]
             ],
