@@ -64,7 +64,7 @@ class Second extends AbstractModifier
         // dataarray anreichern mit Daten aus der entsprechenden Tabelle, die dem Modifier zugrunde liegt
         // Das Fieldset wird für die Daten nicht benötigt, d.h. Felernamen müssen unique sein!
         // im Beispiel ist die Tag-ID auf 5 hardgecoded - Für effektive Umsetzung mit LocatorInterface holen.
-        $data[5]['tag']['test_field_name']= 'test_value_2';
+        $data[5][parent::DATA_SOURCE_DEFAULT]['test_field_name']= 'test_value_2';
         return $data;
     }
 }

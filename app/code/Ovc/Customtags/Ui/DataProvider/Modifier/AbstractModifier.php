@@ -12,7 +12,7 @@ abstract class AbstractModifier implements ModifierInterface
 {
     const FORM_NAME = 'tagedit_form';
     const DATA_SOURCE_DEFAULT = 'tag';
-    const DATA_SCOPE_TAG = 'data';
+    const DATA_SCOPE_TAG = 'data.tag';
 
     /**
      * Name of default general panel
