@@ -16,6 +16,8 @@ use Ovc\Customtags\Model\ResourceModel\Tag\CollectionFactory;
 
 class EditDataProvider extends AbstractDataProvider
 {
+    const DATA_SOURCE_DEFAULT = 'tag';
+
     /**
      * @var array
      */
@@ -40,22 +42,20 @@ class EditDataProvider extends AbstractDataProvider
         $this->pool = $pool;
     }
 
+
     /**
-     * Get data
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getData()
     {
-
-            $items = $this->collection->getItems();
-            foreach ($items as $item) {
-                $this->data[$item->getId()] = $item->getData();
-                foreach ($this->pool->getModifiersInstances() as $modifier) {
-                    $this->data = $modifier->modifyData($this->data);
-                }
-            }
-
+        $items = $this->collection->getItems();
+        foreach ($items as $item) {
+            $this->data[$item->getId()][self::DATA_SOURCE_DEFAULT] = $item->getData();
+        }
+        /** @var ModifierInterface $modifier */
+        foreach ($this->pool->getModifiersInstances() as $modifier) {
+            $this->data = $modifier->modifyData($this->data);
+        }
 
         return $this->data;
     }

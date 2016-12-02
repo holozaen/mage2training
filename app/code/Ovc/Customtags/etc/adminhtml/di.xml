@@ -8,12 +8,28 @@
                     <item name="class" xsi:type="string">Ovc\Customtags\Ui\DataProvider\Modifier\Second</item>
                     <item name="sortOrder" xsi:type="number">20</item>
                 </item>
+                <!-- item name="customertab" xsi:type="array">
+                    <item name="class" xsi:type="string">Ovc\Customtags\Ui\DataProvider\Modifier\Customertab</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item -->
             </argument>
         </arguments>
     </virtualType>
     <type name="Ovc\Customtags\Ui\DataProvider\EditDataProvider">
         <arguments>
             <argument name="pool" xsi:type="object">Ovc\Customtags\Ui\DataProvider\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <!-- type name="Ovc\Customtags\Ui\DataProvider\Modifier\Customertab">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">tagedit_form.tagedit_form</argument>
+        </arguments>
+    </type -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customertab_customer_listing_data_source" xsi:type="string">Magento\Customer\Model\ResourceModel\Grid\Collection</item>
+            </argument>
         </arguments>
     </type>
  </config>
